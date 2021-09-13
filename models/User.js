@@ -1,16 +1,21 @@
+// Import the sequelize npm package
 const { Model, DataTypes } = require('sequelize');
+
+// Import the bcrypt npm package
 const bcrypt = require('bcrypt');
+
+// Import the connection to the database
 const sequelize = require('../config/connection');
 
-// create our User model
+// Create the User model as an extension of the Model class
 class User extends Model {
-  // set up method to run on instance data (per user) to check password
+  // Set up method to run on instance data (per user) to check password
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-// create fields/columns for User model
+// Create the columns for the User model
 User.init(
   {
     id: {
@@ -60,4 +65,5 @@ User.init(
   }
 );
 
+// Export the User model
 module.exports = User;

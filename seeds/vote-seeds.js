@@ -1,5 +1,7 @@
+// Import the Vote model
 const { Vote } = require('../models');
 
+// Define seed data for the Vote model
 const votedata = [
   {
     user_id: 9,
@@ -191,6 +193,8 @@ const votedata = [
   }
 ];
 
+// Function for bulk creating seed data for the Vote model
 const seedVotes = () => Vote.bulkCreate(votedata);
 
+// Export the function for creating seed data for the Vote model
 module.exports = seedVotes;

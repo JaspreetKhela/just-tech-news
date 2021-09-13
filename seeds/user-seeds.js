@@ -1,6 +1,10 @@
+// Import the connection to the database
 const sequelize = require('../config/connection');
+
+// Import the User and Post models
 const { User, Post } = require('../models');
 
+// Define seed data for the User model
 const userdata = [
   {
     username: 'alesmonde0',
@@ -54,6 +58,8 @@ const userdata = [
   }
 ];
 
+// Function for bulk creating the seed data for the User model
 const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});
 
+// Export the function for creating the seed data for the User model
 module.exports = seedUsers;

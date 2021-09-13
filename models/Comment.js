@@ -1,10 +1,15 @@
+// Import the sequelize npm package
 const { Model, DataTypes } = require('sequelize');
+
+// Import the connection to the database
 const sequelize = require('../config/connection');
 
+// Create the Comment model as an extension of the Model class
 class Comment extends Model {}
 
 Comment.init(
   {
+    // Define columns of the Comment model
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -41,4 +46,5 @@ Comment.init(
   }
 );
 
+// Export the Comment model
 module.exports = Comment;

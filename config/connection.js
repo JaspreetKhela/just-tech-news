@@ -1,13 +1,13 @@
 // Import the path module
 const path = require('path')
 
-// Import dotenv npm package
+// Import the dotenv npm package
 require('dotenv').config({path: path.resolve(__dirname, '../.env')});
 
-// Import sequelize npm package
+// Import the sequelize npm package
 const Sequelize = require('sequelize');
 
-// create connection to our db
+// Create a connection to our database
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {

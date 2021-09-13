@@ -1,8 +1,12 @@
+// Import the sequelize npm package
 const { Model, DataTypes } = require('sequelize');
+
+// Import the connection to the database
 const sequelize = require('../config/connection');
 
+// Create the Vote model as an extension of the Model class
 class Vote extends Model {}
-
+// Define the columns of the Vote model
 Vote.init(
   {
     id: {
@@ -34,4 +38,5 @@ Vote.init(
   }
 );
 
+// Export the vote model
 module.exports = Vote;

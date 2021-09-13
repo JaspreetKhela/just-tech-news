@@ -1,5 +1,7 @@
+// Import the Post model
 const { Post } = require('../models');
 
+// Define seed data for the Post model
 const postdata = [
   {
     title: 'Donec posuere metus vitae ipsum.',
@@ -104,6 +106,8 @@ const postdata = [
   }
 ];
 
+// Bulk create seed data for the Post model
 const seedPosts = () => Post.bulkCreate(postdata);
 
+// Export the function for creating seed data for the Post model
 module.exports = seedPosts;

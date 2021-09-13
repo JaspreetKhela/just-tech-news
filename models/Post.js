@@ -1,6 +1,10 @@
+// Import the sequelize npm package
 const { Model, DataTypes } = require('sequelize');
+
+// Import the connection to the database
 const sequelize = require('../config/connection');
-// create our Post model
+
+// Create the Post model as an extension of the Model class
 class Post extends Model {
   static upvote(body, models) {
     return models.Vote.create({
@@ -33,7 +37,7 @@ class Post extends Model {
   }
 }
 
-// create fields/columns for Post model
+// Create the columns for the Post model
 Post.init(
   {
     id: {
@@ -69,4 +73,5 @@ Post.init(
   }
 );
 
+// Export the Post model
 module.exports = Post;
